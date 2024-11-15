@@ -55,11 +55,11 @@ function DivisionGroupsDemo({
             {range(numOfGroups).map((groupIndex) => (
               <div key={groupIndex} className={styles.group}>
                 {range(numOfItemsPerGroup).map((index) => {
-                  const totalInPreviousGroup = groupIndex * numOfItemsPerGroup;
-                  const layoutId = `${id}-${index + totalInPreviousGroup}`;
+                  const totalInPreviousGroups = groupIndex * numOfItemsPerGroup;
+                  const layoutId = `${id}-${index + totalInPreviousGroups}`;
                   return (
                     <motion.div
-                      layout={true}
+                      layoutId={layoutId}
                       key={layoutId}
                       className={styles.item}
                     />
